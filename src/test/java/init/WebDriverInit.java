@@ -1,7 +1,6 @@
 package init;
 
 /*import io.github.bonigarcia.wdm.WebDriverManager;*/
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,10 +18,6 @@ public class WebDriverInit {
 
     @BeforeTest
     public void initDriver() {
-/*      WebDriverManager.chromedriver().setup();*/
-        driver = new ChromeDriver();
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         ChromeOptions chromeOptions = new ChromeOptions();
 
         //Логика, которая будет брать разных юзер агентов при запуске теста (чтобы обойти капчу)

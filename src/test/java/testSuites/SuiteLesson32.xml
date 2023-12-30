@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteLesson32" >
+
+    <listeners>
+        <listener class-name="listeners.ProjectListener"/>
+    </listeners>
+
+
+    <test name="Неверный пароль (первая попытка ввода пароля)">
+        <classes>
+            <class name="Amazon.Amazon_correct_authorization"/>
+        </classes>
+    </test>
+
+    <test name="Неверный пароль (вторая попытка ввода пароля)">
+        <classes>
+            <class name="Amazon.Amazon_correct_authorization"/>
+        </classes>
+    </test>
+
+    <test name="Пользователь авторизован, пароль верный">
+        <classes>
+            <class name="Amazon.Amazon_correct_authorization"/>
+        </classes>
+    </test>
+
+</suite>

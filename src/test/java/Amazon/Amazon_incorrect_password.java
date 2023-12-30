@@ -8,10 +8,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Amazon_incorrect_password extends WebDriverInit {
-    @BeforeTest
-    public void setup() {
-        initDriver();
-    }
 
     @Test
     public void AmazonAuthorization() {
