@@ -1,20 +1,15 @@
 package init;
 
 /*import io.github.bonigarcia.wdm.WebDriverManager;*/
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import java.time.Duration;
 import java.util.Random;
 
-public class WebDriverInit {
-
-    protected WebDriver driver;
-    protected WebDriverWait webDriverWait;
+public class Init {
 
     @BeforeTest
     public void initDriver() {
@@ -29,13 +24,12 @@ public class WebDriverInit {
         int randomIndex = new Random().nextInt(userAgents.length);
         chromeOptions.addArguments("--user-agent=" + userAgents[randomIndex]);
 
-        driver = new ChromeDriver(chromeOptions);
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Configuration.browserCapabilities = chromeOptions;
+        Configuration.timeout = 5000;
     }
 
     @AfterTest
     public void after() {
-        driver.quit();
+        Selenide.closeWebDriver();
     }
-
 }

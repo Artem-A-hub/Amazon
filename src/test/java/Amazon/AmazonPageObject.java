@@ -1,11 +1,13 @@
 package Amazon;
 
 import com.codeborne.selenide.SelenideElement;
+import init.Init;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class AmazonPage {
+public class AmazonPageObject extends Init {
 
     // Локаторы элементов
     private SelenideElement signInButton = $x("//div[@class='nav-line-1-container']");
@@ -13,6 +15,7 @@ public class AmazonPage {
     private SelenideElement continueButton = $("#continue");
     private SelenideElement passwordInput = $("#ap_password");
     private SelenideElement signInSubmitButton = $("#signInSubmit");
+    private SelenideElement passwordError = $(".a-box-inner.a-padding-extra-large");
 
     // Методы для взаимодействия с элементами страницы
     public void openAmazon() {
@@ -42,9 +45,12 @@ public class AmazonPage {
         signInSubmitButton.shouldBe(visible).click();
     }
 
+    public void waitForPasswordError() {
+        passwordError.shouldBe(visible);
+    }
+
     private void maximizeWindow() {
         // разворачивает окно браузера на весь экран
         getWebDriver().manage().window().maximize();
     }
 }
-
