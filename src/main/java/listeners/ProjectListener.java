@@ -1,4 +1,3 @@
-/*
 package listeners;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -20,4 +19,3 @@ public class ProjectListener implements ITestListener {
     }
 
 }
-*/
