@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 public class Amazon_incorrect_empty_password extends Init {
 
-
     @Test
     public void AmazonAuthorization() {
         AmazonPageObject amazonPage = new AmazonPageObject();

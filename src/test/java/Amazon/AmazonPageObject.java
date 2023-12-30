@@ -9,7 +9,6 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class AmazonPageObject extends Init {
 
-    // Локаторы элементов
     private SelenideElement signInButton = $x("//div[@class='nav-line-1-container']");
     private SelenideElement emailInput = $("#ap_email");
     private SelenideElement continueButton = $("#continue");
@@ -17,7 +16,6 @@ public class AmazonPageObject extends Init {
     private SelenideElement signInSubmitButton = $("#signInSubmit");
     private SelenideElement passwordError = $(".a-box-inner.a-padding-extra-large");
 
-    // Методы для взаимодействия с элементами страницы
     public void openAmazon() {
         open("https://www.amazon.com/");
         maximizeWindow();

@@ -1,6 +1,5 @@
 package init;
 
-/*import io.github.bonigarcia.wdm.WebDriverManager;*/
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.chrome.ChromeOptions;
